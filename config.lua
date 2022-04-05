@@ -13,11 +13,9 @@ Config.MaxSpikes = 5
 Config.HandCuffItem = 'handcuffs'
 
 Config.LicenseRank = 2
-
-Config.UseTarget = GetConvar('UseTarget', 'false') == 'true'
 Config.Locations = {
     ["duty"] = {
-        [1] = vector3(440.085, -974.924, 30.689),
+        [1] = vector3(442.78, -981.91, 30.69),
         [2] = vector3(-449.811, 6012.909, 31.815),
     },
     ["vehicle"] = {
@@ -33,22 +31,21 @@ Config.Locations = {
         [2] = vector4(-436.14, 5982.63, 31.34, 136.0),
     },
     ["helicopter"] = {
-        [1] = vector4(449.168, -981.325, 43.691, 87.234),
+        [1] = vector4(448.82, -981.42, 43.69, 202.94),
         [2] = vector4(-475.43, 5988.353, 31.716, 31.34),
     },
     ["armory"] = {
-        [1] = vector3(462.23, -981.12, 30.68),
+        [1] = vector3(481.22, -995.3, 30.69),
     },
     ["trash"] = {
-        [1] = vector3(439.0907, -976.746, 30.776),
+        [1] = vector3(474.75, -988.53, 26.27),
     },
     ["fingerprint"] = {
-        [1] = vector3(460.9667, -989.180, 24.92),
+        [1] = vector3(474.13, -1013.39, 26.27),
     },
     ["evidence"] = {
-        [1] = vector3(442.1722, -996.067, 30.689),
-        [2] = vector3(451.7031, -973.232, 30.689),
-        [3] = vector3(455.1456, -985.462, 30.689),
+        [1] = vector3(474.63, -994.29, 26.27),
+        [2] = vector3(474.59, -996.72, 26.27),
     },
     ["stations"] = {
         [1] = {label = "Police Station", coords = vector4(428.23, -984.28, 29.76, 3.5)},
@@ -104,60 +101,97 @@ Config.SecurityCameras = {
 Config.AuthorizedVehicles = {
 	-- Grade 0
 	[0] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
+		["cvpi"] = "Ford Crown Victoria",
+        ["scooter"] = "Scooter",
 	},
 	-- Grade 1
 	[1] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
-
+		["cvpi"] = "Ford Crown Victoria",
+        ["scooter"] = "Scooter",
 	},
 	-- Grade 2
 	[2] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
+		["cvpi"] = "Ford Crown Victoria",
+        ["scooter"] = "Scooter",
+        ["Nihan16ram"] = "Ram Truck",
+        ["Nihan18charger"] = "Dodge Charger",
+        ["Nihan18fpis"] = "FPIS",
+        ["Nihan20tahoe"] = "Tahoe",
+        ["NihanFpiu"] = "FPIU",
+        ["18mustangum"] = "FPIU",
 	},
 	-- Grade 3
 	[3] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
+		["cvpi"] = "Ford Crown Victoria",
+        ["scooter"] = "Scooter",
+        ["Nihan16ram"] = "Ram Truck",
+        ["Nihan18charger"] = "Dodge Charger",
+        ["Nihan18fpis"] = "FPIS",
+        ["Nihan20tahoe"] = "Tahoe",
+        ["NihanFpiu"] = "FPIU",
+        ["18mustangum"] = "FPIU",
 	},
 	-- Grade 4
 	[4] = {
-		["police"] = "Police Car 1",
-		["police2"] = "Police Car 2",
-		["police3"] = "Police Car 3",
-		["police4"] = "Police Car 4",
-		["policeb"] = "Police Car 5",
-		["policet"] = "Police Car 6",
-		["sheriff"] = "Sheriff Car 1",
-		["sheriff2"] = "Sheriff Car 2",
-	}
+		["cvpi"] = "Ford Crown Victoria",
+        ["scooter"] = "Scooter",
+        ["Nihan16ram"] = "Ram Truck",
+        ["Nihan18charger"] = "Dodge Charger",
+        ["Nihan18fpis"] = "FPIS",
+        ["Nihan20tahoe"] = "Tahoe",
+        ["NihanFpiu"] = "FPIU",
+        ["18mustangum"] = "FPIU",
+	},
+    [5] = {
+		["cvpi"] = "Ford Crown Victoria",
+        ["scooter"] = "Scooter",
+        ["Nihan16ram"] = "Ram Truck",
+        ["Nihan18charger"] = "Dodge Charger",
+        ["Nihan18fpis"] = "FPIS",
+        ["Nihan20tahoe"] = "Tahoe",
+        ["NihanFpiu"] = "FPIU",
+        ["18mustangum"] = "FPIU",
+	},
+    [6] = {
+		["cvpi"] = "Ford Crown Victoria",
+        ["scooter"] = "Scooter",
+        ["Nihan16ram"] = "Ram Truck",
+        ["Nihan18charger"] = "Dodge Charger",
+        ["Nihan18fpis"] = "FPIS",
+        ["Nihan20tahoe"] = "Tahoe",
+        ["NihanFpiu"] = "FPIU",
+        ["18mustangum"] = "FPIU",
+	},
+    [7] = {
+		["cvpi"] = "Ford Crown Victoria",
+        ["scooter"] = "Scooter",
+        ["Nihan16ram"] = "Ram Truck",
+        ["Nihan18charger"] = "Dodge Charger",
+        ["Nihan18fpis"] = "FPIS",
+        ["Nihan20tahoe"] = "Tahoe",
+        ["NihanFpiu"] = "FPIU",
+        ["18mustangum"] = "FPIU",
+	},
+    [8] = {
+		["cvpi"] = "Ford Crown Victoria",
+        ["scooter"] = "Scooter",
+        ["Nihan16ram"] = "Ram Truck",
+        ["Nihan18charger"] = "Dodge Charger",
+        ["Nihan18fpis"] = "FPIS",
+        ["Nihan20tahoe"] = "Tahoe",
+        ["NihanFpiu"] = "FPIU",
+        ["18mustangum"] = "FPIU",
+	},
+    [9] = {
+		["cvpi"] = "Ford Crown Victoria",
+        ["scooter"] = "Scooter",
+        ["Nihan16ram"] = "Ram Truck",
+        ["Nihan18charger"] = "Dodge Charger",
+        ["Nihan18fpis"] = "FPIS",
+        ["Nihan20tahoe"] = "Tahoe",
+        ["NihanFpiu"] = "FPIU",
+        ["18mustangum"] = "FPIU",
+	},
 }
 
 Config.WhitelistedVehicles = {}
@@ -214,7 +248,7 @@ Config.Items = {
     slots = 30,
     items = {
         [1] = {
-            name = "weapon_pistol",
+            name = "weapon_combatpistol",
             price = 0,
             amount = 1,
             info = {
@@ -225,7 +259,7 @@ Config.Items = {
             },
             type = "weapon",
             slot = 1,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [2] = {
             name = "weapon_stungun",
@@ -236,7 +270,7 @@ Config.Items = {
             },
             type = "weapon",
             slot = 2,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [3] = {
             name = "weapon_pumpshotgun",
@@ -250,7 +284,7 @@ Config.Items = {
             },
             type = "weapon",
             slot = 3,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {2, 3, 4, 5, 6, 7, 8, 9}
         },
         [4] = {
             name = "weapon_smg",
@@ -265,7 +299,7 @@ Config.Items = {
             },
             type = "weapon",
             slot = 4,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {2, 3, 4, 5, 6, 7, 8, 9}
         },
         [5] = {
             name = "weapon_carbinerifle",
@@ -280,7 +314,7 @@ Config.Items = {
             },
             type = "weapon",
             slot = 5,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {2, 3, 4, 5, 6, 7, 8, 9}
         },
         [6] = {
             name = "weapon_nightstick",
@@ -289,7 +323,7 @@ Config.Items = {
             info = {},
             type = "weapon",
             slot = 6,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [7] = {
             name = "pistol_ammo",
@@ -298,7 +332,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 7,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [8] = {
             name = "smg_ammo",
@@ -307,7 +341,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 8,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {2, 3, 4, 5, 6, 7, 8, 9}
         },
         [9] = {
             name = "shotgun_ammo",
@@ -316,7 +350,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 9,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {2, 3, 4, 5, 6, 7, 8, 9}
         },
         [10] = {
             name = "rifle_ammo",
@@ -325,7 +359,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 10,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {2, 3, 4, 5, 6, 7, 8, 9}
         },
         [11] = {
             name = "handcuffs",
@@ -334,7 +368,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 11,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [12] = {
             name = "weapon_flashlight",
@@ -343,7 +377,7 @@ Config.Items = {
             info = {},
             type = "weapon",
             slot = 12,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [13] = {
             name = "empty_evidence_bag",
@@ -352,7 +386,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 13,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [14] = {
             name = "police_stormram",
@@ -361,7 +395,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 14,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {2, 3, 4, 5, 6, 7, 8, 9}
         },
         [15] = {
             name = "armor",
@@ -370,7 +404,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 15,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [16] = {
             name = "radio",
@@ -379,7 +413,7 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 16,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
         },
         [17] = {
             name = "heavyarmor",
@@ -388,8 +422,26 @@ Config.Items = {
             info = {},
             type = "item",
             slot = 17,
-            authorizedJobGrades = {0, 1, 2, 3, 4}
-        }
+            authorizedJobGrades = {2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [18] = {
+            name = "ifaks",
+            price = 0,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 18,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
+        [19] = {
+            name = "firstaid",
+            price = 0,
+            amount = 50,
+            info = {},
+            type = "item",
+            slot = 18,
+            authorizedJobGrades = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+        },
     }
 }
 

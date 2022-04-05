@@ -11,15 +11,12 @@ shared_scripts {
 }
 
 client_scripts {
-	'@PolyZone/client.lua',
-	'@PolyZone/BoxZone.lua',
-	'@PolyZone/ComboZone.lua',
 	'client/main.lua',
 	'client/camera.lua',
 	'client/interactions.lua',
 	'client/job.lua',
 	'client/heli.lua',
-	--'client/anpr.lua',
+	'client/anpr.lua',
 	'client/evidence.lua',
 	'client/objects.lua',
 	'client/tracker.lua'
@@ -39,7 +36,9 @@ files {
 	'html/tablet-frame.png',
 	'html/fingerprint.png',
 	'html/main.css',
-	'html/vcr-ocd.ttf'
+	'html/vcr-ocd.ttf',
+	'stream/ril1.ydr',
 }
+data_file 'DLC_ITYP_REQUEST' 'stream/ril1.ydr'
 
 lua54 'yes'

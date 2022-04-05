@@ -25,9 +25,9 @@ end
 local function HandCuffAnimation()
     local ped = PlayerPedId()
     if isHandcuffed == true then
-        TriggerServerEvent("InteractSound_SV:PlayOnSource", "Cuff", 0.2)
+        TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 5, 'cuff', 0.6)
     else
-        TriggerServerEvent("InteractSound_SV:PlayOnSource", "Uncuff", 0.2)
+        TriggerServerEvent('InteractSound_SV:PlayWithinDistance', 5, 'uncuff', 0.6)
     end
 
     loadAnimDict("mp_arrest_paired")
@@ -377,24 +377,49 @@ RegisterNetEvent('police:client:GetKidnappedDragger', function(playerId)
     end)
 end)
 
-RegisterNetEvent('police:client:GetCuffed', function(playerId, isSoftcuff)
+RegisterNetEvent('police:client:GetCuffed', function(playerID, isSoftcuff)
     local ped = PlayerPedId()
+    local Skillbar = exports['np-skillbar']:GetSkillbarObject()
     if not isHandcuffed then
-        isHandcuffed = true
-        TriggerServerEvent("police:server:SetHandcuffStatus", true)
-        ClearPedTasksImmediately(ped)
-        if GetSelectedPedWeapon(ped) ~= `WEAPON_UNARMED` then
-            SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
-        end
-        if not isSoftcuff then
-            cuffType = 16
-            GetCuffedAnimation(playerId)
-            QBCore.Functions.Notify(Lang:t("info.cuff"), 'primary')
-        else
-            cuffType = 49
-            GetCuffedAnimation(playerId)
-            QBCore.Functions.Notify(Lang:t("info.cuffed_walk"), 'primary')
-        end
+        Skillbar.Start({
+            duration = math.random(350, 570),
+            pos = math.random(10, 30),
+            width = math.random(10, 20),
+        }, function()
+            if SucceededAttempts + 1 >= NeededAttempts then
+                isHandcuffed = false
+                isEscorted = false
+                TriggerEvent('hospital:client:isEscorted', isEscorted)
+                DetachEntity(ped, true, false)
+                TriggerServerEvent("police:server:SetHandcuffStatus", false)
+                ClearPedTasksImmediately(ped)
+                TriggerServerEvent("InteractSound_SV:PlayOnSource", "Uncuff", 0.2)
+                QBCore.Functions.Notify("You are uncuffed!")
+            else
+                Skillbar.Repeat({
+                    duration = math.random(700, 1250),
+                    pos = math.random(10, 40),
+                    width = math.random(10, 13),
+                })
+                SucceededAttempts = SucceededAttempts + 1
+            end
+        end, function()
+            isHandcuffed = true
+            TriggerServerEvent("police:server:SetHandcuffStatus", true)
+            ClearPedTasksImmediately(ped)
+            if GetSelectedPedWeapon(ped) ~= `WEAPON_UNARMED` then
+                SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
+            end
+            if not isSoftcuff then
+                cuffType = 16
+                GetCuffedAnimation(playerId)
+                QBCore.Functions.Notify("You are cuffed!")
+            else
+                cuffType = 49
+                GetCuffedAnimation(playerId)
+                QBCore.Functions.Notify("You are cuffed, but you can walk")
+            end
+        end)
     else
         isHandcuffed = false
         isEscorted = false
@@ -403,9 +428,11 @@ RegisterNetEvent('police:client:GetCuffed', function(playerId, isSoftcuff)
         TriggerServerEvent("police:server:SetHandcuffStatus", false)
         ClearPedTasksImmediately(ped)
         TriggerServerEvent("InteractSound_SV:PlayOnSource", "Uncuff", 0.2)
-        QBCore.Functions.Notify(Lang:t("success.uncuffed"),"success")
-    end
+        QBCore.Functions.Notify("You are uncuffed!")
+    end 
 end)
+
+
 
 -- Threads
 CreateThread(function()
